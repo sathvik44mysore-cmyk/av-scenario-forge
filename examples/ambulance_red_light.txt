@@ -1,0 +1,20 @@
+Input: "An ambulance runs a red light at a junction"
+Required: emergency_vehicle, sudden_braking, intersection, night_driving
+
+[1/3] Nemotron 3: parsing scenario...
+      Title:      Ambulance runs red light at junction
+      Properties: ['emergency_vehicle', 'intersection']
+      Risk level: high
+
+[2/3] Fast Downward: verifying safety coverage...
+      Coverage:   50.0%
+      Covered:    ['emergency_vehicle', 'intersection']
+      MISSING:    ['night_driving', 'sudden_braking']  <- will be patched
+      PDDL valid: True
+
+[3/3] Nemotron 3: generating Scenic 3.0 script...
+      Patched:    ['night_driving', 'sudden_braking']
+
+      Summary: An ambulance proceeds through a red-light at a junction while the autonomous
+      vehicle is approaching, creating a high-risk conflict situation. The scenario is set
+      at night and may force the AV to execute sudden braking to avoid a collision.

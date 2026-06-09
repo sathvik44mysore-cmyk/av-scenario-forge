@@ -1,0 +1,21 @@
+Input: "A child runs onto a highway at night during heavy rain, the ego vehicle is doing 120kmh"
+
+[1/3] Nemotron 3: parsing scenario...
+      Title:      Child runs onto highway at night in heavy rain
+      Properties: ['night_driving', 'rain', 'wet_road', 'child_present', 'highway_speed']
+      Risk level: critical
+
+[2/3] Fast Downward: verifying safety coverage...
+      Coverage:   40.0%
+      Covered:    ['night_driving', 'wet_road']
+      MISSING:    ['intersection', 'pedestrian_crossing', 'sudden_braking']  ← will be patched
+      PDDL valid: True
+
+[3/3] Nemotron 3: generating Scenic 3.0 script...
+      Patched:    ['intersection', 'pedestrian_crossing', 'sudden_braking']
+
+      Summary: A child unexpectedly darts onto a high-speed highway at night while heavy rain
+      creates slick, wet road conditions, forcing the autonomous vehicle to detect and react to
+      a sudden pedestrian intrusion. The scenario is rated critical risk, highlighting gaps in
+      the vehicle's handling of intersections, marked pedestrian crossings, and emergency
+      braking maneuvers under adverse weather.
